@@ -63,7 +63,7 @@ Adding `hour_squared` as a polynomial feature improved R² from 0.36 to 0.73. Th
 - The model predicts negative volumes for 5.7% of test cases, predominantly during low-traffic night hours.
 
 
-## Engineering Application
+##  Application
 
 The trained model can predict traffic volume for any combination of input conditions. For example:
 
