@@ -1,20 +1,18 @@
 # Traffic Volume Prediction on I-94 Interstate Highway 
 
-A supervised machine learning project that predicts hourly traffic volume on the I-94 interstate highway (Minneapolis–St Paul, MN) using weather conditions, time of day, and calendar features.
+This is a supervised machine learning project that predicts hourly traffic volume on the I-94 interstate highway (Minneapolis–St Paul, MN) using weather conditions, time of day, and other calendar features.
 
 ## Project Overview
 
-Traffic volume prediction is a core problem in transportation engineering. Accurate forecasts allow highway authorities to make informed decisions on signal timing, maintenance scheduling, and road capacity planning. This project applies linear regression to 6 years of hourly traffic data (2012–2018) to build a model that predicts how many vehicles will use the highway in any given hour.
+Traffic volume prediction is a core problem in transportation engineering. Accurate forecasts allow highway authorities to make informed decisions on signal timing, maintenance scheduling, and road capacity planning. This project applies linear regression to 6 years of hourly traffic data collected by the Minnesota Department of Transportation (MnDOT) from 2012 to 2018 to build a model that predicts how many vehicles will use the highway in any given hour.
 
 
 ## Dataset
 
-- **Source:** [Metro Interstate Traffic Volume – UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Metro+Interstate+Traffic+Volume)
-- **Size:** 48,204 hourly records
+**Source:** [Metro Interstate Traffic Volume – Kaggle](https://www.kaggle.com/datasets/anshtanwar/metro-interstate-traffic-volume)
 - **Features:** Weather conditions, temperature, holiday status, date and time
-- **Target:** `traffic_volume` — hourly westbound vehicle count on I-94
+- **Target:** `traffic_volume` — hourly vehicle count on I-94
 
----
 
 ## Methodology
 
@@ -40,7 +38,7 @@ The following features were engineered from the raw data:
 | `snow_1h` | Snowfall in mm per hour |
 
 ### 3. Model Training
-- Algorithm: Linear Regression (sklearn)
+- Algorithm: Linear Regression (scikitlearn)
 - Train/test split: 80/20
 - Feature scaling: StandardScaler
 
@@ -52,7 +50,7 @@ The following features were engineered from the raw data:
 | RMSE | 1590 vehicles/hr | 1030 vehicles/hr |
 | MAE | 1373 vehicles/hr | 798 vehicles/hr |
 
-Adding `hour_squared` as a polynomial feature improved R² from 0.36 to 0.73 — the model now explains 73% of the variation in hourly traffic volume.
+Adding `hour_squared` as a polynomial feature improved R² from 0.36 to 0.73. The model now explains 73% of the variation in hourly traffic volume.
 
 
 
@@ -62,7 +60,7 @@ Adding `hour_squared` as a polynomial feature improved R² from 0.36 to 0.73 —
 - Rush hour traffic is significantly busier than off-peak hours
 - Weekend traffic is notably lower than weekday traffic
 - Weather conditions have a secondary but measurable effect on volume
-- The model predicts negative volumes for 5.7% of test cases, predominantly during low-traffic night hours. A limitation of unconstrained linear regression
+- The model predicts negative volumes for 5.7% of test cases, predominantly during low-traffic night hours.
 
 
 ## Engineering Application
@@ -83,7 +81,6 @@ These predictions have direct applications in:
 - Non-linear models would likely improve accuracy further
 - Adding more features like incident data, school schedules, and local events could reduce residual patterns
 
----
 
 ## Tools and Libraries
 
@@ -92,11 +89,11 @@ These predictions have direct applications in:
 - Matplotlib, Seaborn
 - Jupyter Notebook
 
----
-
 ## Author
 
-**Yeboah Derrick Duah**
-derrickyebs@gmail.com
-March 2026
+- **Yeboah Derrick Duah**
+- derrickyebs@gmail.com
+- March 2026
+
+
 
